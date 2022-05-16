@@ -17,7 +17,7 @@ module.exports = async (ctx) => {
         } else {
             const routeParams = querystring.parse(ctx.params.routeParams);
             displayVideo = fallback(undefined, queryToBoolean(routeParams.displayVideo), true) ? '1' : '0';
-            displayArticle = fallback(undefined, queryToBoolean(routeParams.displayArticle), false) ? '1' : '0';
+            displayArticle = fallback(undefined, queryToBoolean(routeParams.displayArticle), true) ? '1' : '0';
             displayComments = fallback(undefined, queryToBoolean(routeParams.displayComments), false) ? '1' : '0';
         }
     }
