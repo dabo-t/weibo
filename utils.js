@@ -230,8 +230,8 @@ const weiboUtils = {
             }
 
             html += '</div>';
-            html = html.replace(/<br><br><br><br><small>/g, '<br><br><small>');
-            html = html.replace(/<br><br><br><small>/g, '<br><br><small>');
+            html = html.replace(/<br><br><br><small>/g, '<br><small>');
+            html = html.replace(/<br><br><small>/g, '<br><small>');
             html = html.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
         }
 
