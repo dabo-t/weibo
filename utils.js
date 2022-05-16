@@ -171,7 +171,7 @@ const weiboUtils = {
                 }
 
                 let style = '';
-                html += '<img ';
+                html += '<br><img ';
                 html += readable ? 'vspace="8" hspace="4"' : '';
                 if (widthOfPics >= 0) {
                     html += ` width="${widthOfPics}"`;
@@ -187,9 +187,9 @@ const weiboUtils = {
                     html += '</a>';
                 }
 
-                if (!readable) {
-                    html += '<br>';
-                }
+                //if (!readable) {
+                //    html += '<br>';
+                //}
 
                 htmlNewLineUnreplaced += '<img src="" />';
             });
