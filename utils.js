@@ -155,7 +155,7 @@ const weiboUtils = {
                 html += '<br clear="both" /><div style="clear: both"></div>';
             }
 
-            html += '<br>';
+            //html += '<br>';
 
             // 一些RSS Reader会识别所有<img>标签作为内含图片显示，我们不想要头像也作为内含图片之一
             // 让所有配图在description的最前面再次出现一次，但宽高设为0
