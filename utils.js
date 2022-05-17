@@ -291,7 +291,7 @@ const weiboUtils = {
         let anyVideo = false;
         if (livePhotos) {
             livePhotos.forEach((livePhoto) => {
-                video += `<video controls="controls" poster="${(livePhoto.large && livePhoto.large.url) || livePhoto.url}" src="${livePhoto.videoSrc}" style="width: 100%"></video>`;
+                video += `<video controls="controls" poster="${(livePhoto.large && livePhoto.large.url) || livePhoto.url}" src="${livePhoto.videoSrc}" style="width: 100%"></video><br>`;
                 anyVideo = true;
             });
         }
@@ -326,10 +326,11 @@ const weiboUtils = {
                 if (pageUrl) {
                     video += `<p>视频无法显示，请前往<a href="${pageUrl}" target="_blank" rel="noopener noreferrer">微博视频</a>观看。</p>`;
                 }
-                video += '</video><br><br>';
+                video += '</video><br>';
                 anyVideo = true;
             }
         }
+        video += '<br>';
         if (anyVideo) {
             itemDesc += video;
         }
