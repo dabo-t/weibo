@@ -326,7 +326,7 @@ const weiboUtils = {
                 if (pageUrl) {
                     video += `<p>视频无法显示，请前往<a href="${pageUrl}" target="_blank" rel="noopener noreferrer">微博视频</a>观看。</p>`;
                 }
-                video += '</video><br>';
+                video += '</video><br><br>';
                 anyVideo = true;
             }
         }
