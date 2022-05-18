@@ -223,7 +223,7 @@ const weiboUtils = {
                 html += `<br><small>原博：<a href="https://weibo.com/${status.retweeted_status.user.id}/${status.retweeted_status.bid}" rel="noopener noreferrer">https://weibo.com/${status.retweeted_status.user.id}/${status.retweeted_status.bid}</a></small>`;
             }
             if (showTimestampInDescription) {
-                html += `<br><small>` + new Date(status.retweeted_status.created_at).toLocaleString() + `</small>`;
+                html += `<p><small>` + new Date(status.retweeted_status.created_at).toLocaleString() + `</small></p>`;
             }
             if (readable) {
                 html += `<br clear="both" /><div style="clear: both"></div>`;
