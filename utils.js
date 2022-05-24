@@ -203,7 +203,7 @@ const weiboUtils = {
         }
 
 	//图片评论处理
-        html = html.replace(/<a href="(.*?).jpg" data-hide="" style="color:#09f!important;text-decoration:none!important;"><br>(.*?)<\/a><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">/g,'<br><a href="$1.jpg" style="color:#09f!important;text-decoration:none!important;">查看图片 </a><br><img src="$1.jpg" referrerpolicy="no-referrer" width="800"><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">');
+        html = html.replace(/<a href="(.*?).jpg" data-hide="" style="color:#09f!important;text-decoration:none!important;"><br>\u67e5\u770b\u56fe\u7247 <\/a>/g,'<a href="$1.jpg" style="color:#09f!important;text-decoration:none!important;"> 查看图片 </a><br><br><img src="$1.jpg" referrerpolicy="no-referrer" width="400"><br><br>');
 
         if (showAuthorInDesc && showAuthorAvatarInDesc) {
             html = picsPrefixes.join('') + html;
