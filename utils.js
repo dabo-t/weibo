@@ -52,64 +52,30 @@ const weiboUtils = {
         // 长文章的处理
         let htmlNewLineUnreplaced = (status.longText && status.longText.longTextContent) || status.text || '';
         // 视频图标处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_video_default.png'><\/span>/g,
-            '<br>📹'
-        );
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_video_default.png'><\/span>/g,'<br>📹');
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='https:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_movie_default.png'><\/span>/g,'🎬 ');
         // 地点图标处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_location_default.png'><\/span>/g,
-            '<br>📍'
-        );
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_location_default.png'><\/span>/g,'<br>📍');
         // 购物车图标处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/01\/21\/20\/timeline_card_small_photo_default.png'><\/span>/g,
-            '<br>'
-        );
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/01\/21\/20\/timeline_card_small_photo_default.png'><\/span>/g,'<br>');
         htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/link_icon_default.png'><\/span>/g, ' 🛒');
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_taobao_default.png'><\/span>/g,
-            ' 🛒'
-        );
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_taobao_default.png'><\/span>/g,' 🛒');
         // 超话图标处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/n.sinaimg.cn\/photo\/5213b46e\/(.*?)\/timeline_card_small_super_default.png'><\/span>/g,
-            ' 💎'
-        );
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/n.sinaimg.cn\/photo\/5213b46e\/(.*?)\/timeline_card_small_super_default.png'><\/span>/g,' 💎');
         // 日历图标处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2016\/07\/04\/165\/timeline_card_small_checkin_default.png'><\/span>/g,
-            '<br>'
-        );
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2016\/07\/04\/165\/timeline_card_small_checkin_default.png'><\/span>/g,'<br>');
         // 音乐图标处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_music_default.png'><\/span>/g,
-            ' 🎵'
-        );
-        
-        //图片评论处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<a data-url="http:\/\/t.cn\/(.*?)" href="(.*?).jpg" data-hide=""><br>(.*?)<\/a><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">/g,'<br><a href="$2.jpg" style="color:#09f!important;text-decoration:none !important;">查看图片</a><br><img src="$2.jpg" width="500"><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">');
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_music_default.png'><\/span>/g,' 🎵');
         // 链接图标处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_web_default.png'><\/span>/g,
-            ' 🔗'
-        );
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_weibo_default.png'><\/span>/g,
-            ' 🔗'
-        );
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_web_default.png'><\/span>/g,' 🔗');
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_weibo_default.png'><\/span>/g,' 🔗');
         // 文章图标处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(
-            /<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_article_default.png'><\/span>/g,
-            '<br>📄'
-        );
+        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class='url-icon'><img style='width: 1rem;height: 1rem' src='http(s)?:\/\/h5.sinaimg.cn\/upload\/2015\/09\/25\/3\/timeline_card_small_article_default.png'><\/span>/g,'<br>📄');
         // 表情图标转换为文字
-        if (!showEmojiInDescription) {
-            htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class=["']?url-icon["']?><img\s[^>]*?alt=["']?([^>]+?)["']?\s[^>]*?\/><\/span>/g, ' $1');
+        if (!showEmojiInDescription) {htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class=["']?url-icon["']?><img\s[^>]*?alt=["']?([^>]+?)["']?\s[^>]*?\/><\/span>/g, ' $1');
         }
         // 去掉链接的图标，保留 a 标签链接
-        if (!showLinkIconInDescription) {
-            htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/(<a\s[^>]*>)<span class=["']?url-icon["']?><img\s[^>]*><\/span>[^<>]*?<span class=["']?surl-text["']?>([^<>]*?)<\/span><\/a>/g, '$1$2</a>');
+        if (!showLinkIconInDescription) {htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/(<a\s[^>]*>)<span class=["']?url-icon["']?><img\s[^>]*><\/span>[^<>]*?<span class=["']?surl-text["']?>([^<>]*?)<\/span><\/a>/g, '$1$2</a>');
         }
         // 去掉乱七八糟的图标  // 不需要，上述的替换应该已经把所有的图标都替换掉了，且这条 regex 会破坏上述替换不发生时的输出
         // htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class=["']?url-icon["']?>(<img\s[^>]*?>)<\/span>/g, '');
@@ -236,6 +202,9 @@ const weiboUtils = {
             html = html.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
         }
 
+	//图片评论处理
+        html = html.replace(/<a href="(.*?).jpg" data-hide="" style="color:#09f!important;text-decoration:none!important;"><br>(.*?)<\/a><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">/g,'<br><a href="$1.jpg" style="color:#09f!important;text-decoration:none!important;">查看图片 </a><br><img src="$1.jpg" referrerpolicy="no-referrer" width="800"><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">');
+
         if (showAuthorInDesc && showAuthorAvatarInDesc) {
             html = picsPrefixes.join('') + html;
         }
@@ -288,7 +257,7 @@ const weiboUtils = {
     formatVideo: (itemDesc, status) => {
         const pageInfo = status.page_info;
         const livePhotos = status.pics && status.pics.filter((pic) => pic.type === 'livephotos' && pic.videoSrc);
-        let video = '<br clear="both" /><div style="clear: both"></div>';
+        let video = '<div style="clear: both"></div>';
         let anyVideo = false;
         if (livePhotos) {
             livePhotos.forEach((livePhoto) => {
@@ -311,7 +280,7 @@ const weiboUtils = {
             const hasVideo = video720p || videoHd || videoHdHevc || videoLd;
 
             if (hasVideo) {
-                video += `<video controls="controls" poster="${posterUrl}" style="width: 100%">`;
+                video += `<br><video controls="controls" poster="${posterUrl}" style="width: 100%">`;
                 if (video720p) {
                     video += `<source src="${video720p}">`;
                 }
@@ -327,11 +296,12 @@ const weiboUtils = {
                 if (pageUrl) {
                     video += `<p>视频无法显示，请前往<a href="${pageUrl}" target="_blank" rel="noopener noreferrer">微博视频</a>观看。</p>`;
                 }
-                video += '</video><br>';
+                video += '</video>';
                 anyVideo = true;
             }
         }
         video += '<br>';
+        video = video.replace(/<div style="clear: both"><\/div><br><br><video controls="controls"/g, '<br><video controls="controls"');
         if (anyVideo) {
             itemDesc += video;
         }
