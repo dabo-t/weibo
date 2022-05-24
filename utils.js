@@ -261,7 +261,7 @@ const weiboUtils = {
         let anyVideo = false;
         if (livePhotos) {
             livePhotos.forEach((livePhoto) => {
-                video += `<br><br><video controls="controls" poster="${(livePhoto.large && livePhoto.large.url) || livePhoto.url}" src="${livePhoto.videoSrc}" style="width: 100%"></video><br>`;
+                video += `<br><br><video controls="controls" poster="${(livePhoto.large && livePhoto.large.url) || livePhoto.url}" src="${livePhoto.videoSrc}" style="width: 100%"></video>`;
                 anyVideo = true;
             });
         }
