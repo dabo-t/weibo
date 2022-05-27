@@ -301,7 +301,7 @@ const weiboUtils = {
             }
         }
         video += '<br>';
-        video = video.replace(/<div style="clear: both"><\/div><br><br><video controls="controls"/g, '<br><video controls="controls"');
+        video = video.replace(/<div style="clear: both"><\/div><br><br><video controls="controls"/g, '<br><br><video controls="controls"');
         if (anyVideo) {
             itemDesc += video;
         }
