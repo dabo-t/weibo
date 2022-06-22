@@ -207,7 +207,7 @@ const weiboUtils = {
 
         html = html.replace(/referrerpolicy="no-referrer" width="400"><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">/g,'referrerpolicy="no-referrer" width="400"><br><div style="border-left: 3px solid gray; padding-left: 1em;">');
 
-	html = html.replace(/<img src="https:\/\/images\.weserv\.nl\/\?url=https:\/\/zzx\.sinaimg\.cn\/largeb\//g,'<img src="https://zzx.sinaimg.cn/largeb/');
+	html = html.replace(/src="https:\/\/images\.weserv\.nl\/\?url=https:\/\/zzx\.sinaimg\.cn\/largeb\//g,'src="https://zzx.sinaimg.cn/largeb/');
 
         if (showAuthorInDesc && showAuthorAvatarInDesc) {
             html = picsPrefixes.join('') + html;
