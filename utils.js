@@ -150,7 +150,7 @@ const weiboUtils = {
                     html += ` height="${heightOfPics}"`;
                     style += `height: ${heightOfPics}px;`;
                 }
-                html += ` style="${style}"` + ' src="' + item.large.url + '">';
+                html += ` style="${style}"` + ' src="https://images.weserv.nl/?url=' + item.large.url + '">';
 
                 if (addLinkForPics) {
                     html += '</a>';
