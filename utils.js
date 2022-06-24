@@ -84,9 +84,7 @@ const weiboUtils = {
         // 去掉全文
         // htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/全文<br>/g, '<br>');
         // htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<a href="(.*?)">全文<\/a>/g, '');
-        // 链接样式处理
-        //htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
-        //htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<\/a>/g, ' </a>');
+
         htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class="surl-text">(.*?)<\/span>/g, '$1');
 
         // 处理外部链接
@@ -199,13 +197,12 @@ const weiboUtils = {
             }
 
             html += '</div>';
-            //html = html.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
         }
 
 	//图片评论处理
-        html = html.replace(/<a  href="(.*?)" data-hide=""><br>(查看图片|评论配图)<\/a>/g,'<a href="$1" style="color:#09f!important;text-decoration:none!important;"> 评论配图 </a><br><br><img src="$1" referrerpolicy="no-referrer" width="400">');
-
-        //html = html.replace(/referrerpolicy="no-referrer" width="400"><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">/g,'referrerpolicy="no-referrer" width="400"><br><div style="border-left: 3px solid gray; padding-left: 1em;">');
+        html = html.replace(/<a  href="(.*?)" data-hide=""><br>(查看图片|评论配图)<\/a>/g,'<a href="$1"> 评论配图 </a><br><br><img src="$1" referrerpolicy="no-referrer" width="400">');
+        html = html.replace(/referrerpolicy="no-referrer" width="400"><br><br><div style="border-left: 3px solid gray; padding-left: 1em;">/g,'referrerpolicy="no-referrer" width="400"><br><div style="border-left: 3px solid gray; padding-left: 1em;">');
+        html = html.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
 
 	//html = html.replace(/src="https:\/\/images\.weserv\.nl\/\?url=https:\/\/zzx\.sinaimg\.cn\/largeb\//g,'src="https://zzx.sinaimg.cn/largeb/');
 
