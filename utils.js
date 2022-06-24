@@ -199,7 +199,7 @@ const weiboUtils = {
             }
 
             html += '</div>';
-            html = html.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
+            //html = html.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
         }
 
 	//图片评论处理
