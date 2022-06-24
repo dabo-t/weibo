@@ -85,7 +85,7 @@ const weiboUtils = {
         // htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/全文<br>/g, '<br>');
         // htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<a href="(.*?)">全文<\/a>/g, '');
         // 链接样式处理
-        htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
+        //htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<a (.*?)>/g, '<a $1 style="color:#09f!important;text-decoration:none!important;">');
         htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<\/a>/g, ' </a>');
         htmlNewLineUnreplaced = htmlNewLineUnreplaced.replace(/<span class="surl-text">(.*?)<\/span>/g, '$1');
 
